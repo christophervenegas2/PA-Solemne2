@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="container__title">POSTS</div>
+  <div class="container__input">
+    <input [(ngModel)]="userId" placeholder="User ID (1-10)">
+    <button (click)="postByUser()">Search</button>
+  </div>
+  <div class="container__cards" *ngIf="!userId ? !userId : userId">
+    <div class="container__cards__card" *ngFor="let post of posts">
+      <div class="card-body">UserID: {{ post.userId }}
+        <h5 class="card-title">Title: {{ post.title }}</h5>
+        <p class="card-text mb-2 text-muted">{{ post.body }}</p>
+      </div>
+    </div>
+  </div>
+</div>
