@@ -28,7 +28,7 @@ pipeline {
       }
     }
 
-    stage('Copilando la imagen') {
+    stage('Copilando las imagenes') {
       steps {
         echo 'Comenzamos la copilación de frontend'
         script {
