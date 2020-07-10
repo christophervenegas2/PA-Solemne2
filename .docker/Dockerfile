@@ -5,7 +5,7 @@ FROM ubuntu:18.04 as home
 #Nivel 1, El nodejs
 FROM node:latest as node
 
-WORKDIR ./app
+WORKDIR /app
 
 COPY . .
 
