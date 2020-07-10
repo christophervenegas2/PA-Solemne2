@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PostsService } from 'src/app/services/posts.service';
-import { CommentsService } from 'src/app/services/comments.service';
 import { Post } from 'src/app/classes/post';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-post',
@@ -15,7 +15,7 @@ export class PostComponent implements OnInit {
 
   constructor(
     private postsService: PostsService,
-    private commentsService: CommentsService
+    private router: Router
   ) { }
 
   public ngOnInit() {
@@ -29,5 +29,12 @@ export class PostComponent implements OnInit {
     this.postsService.getPostByUser(Number(this.userId)).then((data:Post[])=> {
       this.posts = data;
     });
+  }
+
+  public viewPost(post: any) {
+
+    let postId;
+    postId = post.id;
+    this.router.navigate(['/posts',postId]);
   }
 }

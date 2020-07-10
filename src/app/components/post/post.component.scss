@@ -22,8 +22,8 @@
     flex-direction: column;
     align-items: center;
 
-    &__card {
-      background: black;
+    .card {
+      background: #6c757d !important;
       border: solid 1px white;
       width: 60% !important;
       margin: 10px;
