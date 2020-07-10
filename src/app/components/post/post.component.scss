@@ -27,6 +27,12 @@
       border: solid 1px white;
       width: 60% !important;
       margin: 10px;
+      
+      .card-body .id {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
     }
   }
 }

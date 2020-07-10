@@ -7,19 +7,24 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { UserComponent } from './components/user/user.component';
 import { IndexComponent } from './components/index/index.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { PostComponent } from './components/post/post.component';
+import { PostIdComponent } from './components/post-id/post-id.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     UserComponent,
-    IndexComponent
+    IndexComponent,
+    PostComponent,
+    PostIdComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
-
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
