@@ -1,12 +1,25 @@
 pipeline {
   agent any
 
+  environment{
+    frontendImage = ''
+  }
+
   stages {
     stage('Preparando las compilaciónes') {
       steps {
         echo 'Limpiando previo a la copilación'
         script {
           sh 'echo Bkj6dhBLfmv6yq_aM3r9 | cat | docker login registry.gitlab.com --username kerry --password-stdin'
+        }
+      }
+    }
+
+    stage('Copilando la imagen') {
+      steps {
+      echo 'Comenzamos la copilacion de frontend'
+        script {
+          frontendImage = docker.build("registry.gitlab.com/sebastianrh.sarh/solemne2_g1", "./.docker -f ./.docker/Dockerfile")
         }
       }
     }
