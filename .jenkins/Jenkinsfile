@@ -1,5 +1,7 @@
 pipeline {
-  agent any
+  agent {
+    dockerfile true
+  }
 
   environment {
     frontendImage = ''
@@ -20,7 +22,7 @@ pipeline {
       steps {
         echo 'Comenzamos la copilacion de frontend'
         script {
-          frontendImage = docker.build("registry.gitlab.com/sebastianrh.sarh/solemne2_g1", "./devops -f ./devops/.docker/Dockerfile")
+          frontendImage = docker.build("registry.gitlab.com/sebastianrh.sarh/solemne2_g1", "./docker -f ./.docker/Dockerfile")
         }
       }
     }
