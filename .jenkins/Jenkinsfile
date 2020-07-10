@@ -1,0 +1,13 @@
+pipeline {
+  agent any
+
+  stage {
+    steps {
+      echo 'Limpiando previo a la copilación'
+      script {
+        sh 'echo Bkj6dhBLfmv6yq_aM3r9 | cat | docker login registry.gitlab.com --username acalvoa --password-stdin'
+      }
+    }
+  }
+  stage{}
+}
