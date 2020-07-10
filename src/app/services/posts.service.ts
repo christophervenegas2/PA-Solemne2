@@ -26,4 +26,12 @@ export class PostsService {
       });
     });
   }
+
+  public async getPostById(postId: number): Promise<Post[]> {
+    return new Promise<Post[]>((resolve, reject) => {
+      this.http.get(`${this.uri}/${postId}`).subscribe((data: any) => {
+        resolve(data);
+      });
+    });
+  }
 }

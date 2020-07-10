@@ -1,1 +1,13 @@
 <p>post-id works!</p>
+
+<div *ngFor="let comment of comments">
+  {{comment.id}}
+  {{comment.name}}
+  {{comment.email}}
+  {{comment.body}}
+</div>
+
+<input #nombre placeholder="nombre">
+<input #mail placeholder="mail">
+<input #cuerpo placeholder="cuerpo">
+<button (click)="boton(nombre.value, mail.value, cuerpo.value)"> crear comentario </button>
