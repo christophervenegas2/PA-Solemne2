@@ -14,15 +14,5 @@ pipeline {
         }
       }
     }
-
-    
-    stage('Compilando la imagen') {
-      steps {
-        echo 'Comenzamos la copilacion de frontend'
-        script {
-          frontendImage = docker.build("registry.gitlab.com/sebastianrh.sarh/solemne2_g1", "./devops -f ./devops/.docker/Dockerfile")
-        }
-      }
-    }
   }
 }
