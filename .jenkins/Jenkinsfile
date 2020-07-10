@@ -14,7 +14,7 @@ pipeline {
     gitLabConnection('Gitlab')
   }
 
-  environment{
+  environment {
     frontendImage = ''
   }
 
