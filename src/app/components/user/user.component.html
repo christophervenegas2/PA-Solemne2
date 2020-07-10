@@ -1,1 +1,10 @@
-<p>user works!</p>
+<div class="container">
+  <div class="container__title">USERS</div>
+  <div class="card text-white bg-secondary mb-3" *ngFor="let user of users">
+    <div class="card-header">{{ user.name }}</div>
+    <div class="card-body">
+      <h5 class="card-title">{{ user.username }}</h5>
+      <p class="card-text">{{ user.email }}</p>
+    </div>
+  </div>
+</div>
