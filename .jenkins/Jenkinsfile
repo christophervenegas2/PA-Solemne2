@@ -30,9 +30,21 @@ pipeline {
 
     stage('Copilando la imagen') {
       steps {
-      echo 'Comenzamos la copilación de frontend'
+        echo 'Comenzamos la copilación de frontend'
         script {
           frontendImage = docker.build("registry.gitlab.com/sebastianrh.sarh/solemne2_g1", ". -f ./.docker/Dockerfile")
+        }
+      }
+    }
+
+    stage('Sincronizamios la imagen en el repositorio') {
+      steps {
+        echo 'Subimos la imagen al repositorio'
+        script {
+          docker.withRegistry('https://registry.gitlab.com'){
+            echo 'Publicando imagen de Angular'
+            frontendImage.push()
+          }
         }
       }
     }
