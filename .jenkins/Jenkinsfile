@@ -19,7 +19,7 @@ pipeline {
       steps {
       echo 'Comenzamos la copilación de frontend'
         script {
-          frontendImage = docker.build("registry.gitlab.com/sebastianrh.sarh/solemne2_g1", "./.docker -f ./.docker/Dockerfile")
+          frontendImage = docker.build("registry.gitlab.com/sebastianrh.sarh/solemne2_g1", ". -f ./.docker/Dockerfile")
         }
       }
     }
