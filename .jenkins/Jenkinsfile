@@ -2,7 +2,7 @@ pipeline {
   agent any
 
   stages {
-    stage('Preparando la compilación') {
+    stage('Preparando las compilaciónes') {
       steps {
         echo 'Limpiando previo a la copilación'
         script {
