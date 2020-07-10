@@ -17,7 +17,7 @@ pipeline {
 
     stage('Copilando la imagen') {
       steps {
-      echo 'Comenzamos la copilacion de frontend'
+      echo 'Comenzamos la copilación de frontend'
         script {
           frontendImage = docker.build("registry.gitlab.com/sebastianrh.sarh/solemne2_g1", "./.docker -f ./.docker/Dockerfile")
         }
