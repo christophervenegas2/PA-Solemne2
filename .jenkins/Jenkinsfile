@@ -1,13 +1,28 @@
 pipeline {
   agent any
 
-  stage {
-    steps {
-      echo 'Limpiando previo a la copilación'
-      script {
-        sh 'echo Bkj6dhBLfmv6yq_aM3r9 | cat | docker login registry.gitlab.com --username acalvoa --password-stdin'
+  environment {
+    frontendImage = ''
+  }
+
+  stages {
+    stage('Preparando la compilación') {
+      steps {
+        echo 'Limpiando previo a la copilación'
+        script {
+          sh 'echo Bkj6dhBLfmv6yq_aM3r9 | cat | docker login registry.gitlab.com --username acalvoa --password-stdin'
+        }
+      }
+    }
+
+    
+    stage('Compilando la imagen') {
+      steps {
+        echo 'Comenzamos la copilacion de frontend'
+        script {
+          frontendImage = docker.build("registry.gitlab.com/sebastianrh.sarh/solemne2_g1", "./devops -f ./devops/.docker/Dockerfile")
+        }
       }
     }
   }
-  stage{}
 }
