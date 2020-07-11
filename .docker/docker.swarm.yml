@@ -2,7 +2,7 @@ version: '3.5'
 services:
   angular:
     image: registry.gitlab.com/sebastianrh.sarh/solemne2_g1
-    ports:
+    deploy:
       placement:
         constraints: [node.role==worker]
       labels:
