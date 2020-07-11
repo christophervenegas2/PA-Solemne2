@@ -23,6 +23,8 @@ WORKDIR /usr/share/nginx/html
 
 COPY --from=node /app/dist/solemne2 .
 
+EXPOSE 80
+
 COPY ./nginx-custom.conf /etc/nginx/conf.d/default.conf
 
 #Como correr Dockerfile? 
