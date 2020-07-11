@@ -13,12 +13,10 @@ export class PostComponent implements OnInit {
 
   public posts: Post[];
   public userId: number;
-  // public comments: Comment[];
 
   constructor(
     private postsService: PostsService,
     private router: Router
-    // private commentsService: CommentsService
   ) { }
 
   public ngOnInit() {
@@ -32,11 +30,6 @@ export class PostComponent implements OnInit {
     this.postsService.getPostByUser(Number(this.userId)).then((data:Post[])=> {
       this.posts = data;
     });
-
-    // this.commentsService.getCommentByPost(Number(this.userId)).then((data:Comment[]) => {
-    //   this.comments = data;
-    //   console.log(this.comments);
-    // });
   }
 
   public viewPost(post: any) {
