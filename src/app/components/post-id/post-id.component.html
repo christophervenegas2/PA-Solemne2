@@ -14,7 +14,7 @@
       <div *ngFor="let comment of comments" class="background">
         <div class="content">
           <div class="lineup">
-            <div class="info">{{ comment.id }}#{{ comment.name }}</div>
+            <div class="info">{{ comment.id }}# {{ comment.name }}</div>
             <div class="email">{{ comment.email }} 
               <div class="icon">
                 <svg viewBox="0 0 16 16" class="bi bi-x-square-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -63,7 +63,7 @@
         </form>
       </div>
       <div class="modal-footer">
-        <button (click)="addComment(name.value ,email.value, body.value)" type="button" class="btn btn-primary">OK</button>
+        <button (click)="addComment(name.value ,email.value, body.value)" data-dismiss="modal" type="button" class="btn btn-primary">OK</button>
       </div>
     </div>
   </div>

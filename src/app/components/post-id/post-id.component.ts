@@ -44,7 +44,7 @@ export class PostIdComponent implements OnInit {
   }
 
   public addComment(name: string, email: string, body: string) {
-    const comment = new Comment({
+    let comment = new Comment({
       postId: this.postId,
       name: name,
       email: email,
