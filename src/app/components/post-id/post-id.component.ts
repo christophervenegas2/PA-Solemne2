@@ -15,7 +15,7 @@ export class PostIdComponent implements OnInit {
   public postId: number;
   public comments: Comment[];
   public allComments: Comment[];
-  public post: Post[];
+  public post: Post;
 
   constructor(
     private router: ActivatedRoute,

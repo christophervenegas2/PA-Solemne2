@@ -1,0 +1,56 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__title {
+    font-size: 100px;
+  }
+
+  .card {
+    background: #6c757d !important;
+    border: solid 1px white;
+    width: 60% !important;
+    margin: 10px;
+
+    .comments {
+      border-top: solid 1px white;
+
+      .title {
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      .background {
+        background-color: white;
+        margin: 20px;
+        color: black;
+
+        .content {
+          padding: 10px;
+          border-radius: 10px 10px 10px 10px;
+          -moz-border-radius: 10px 10px 10px 10px;
+          -webkit-border-radius: 10px 10px 10px 10px;
+          border: 1px solid #000000;
+
+          .lineup {
+            border-bottom: solid 1px black;
+            margin: 0px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+          }
+        }
+      }
+
+      .button {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+
+.modal-content {
+  color: black;
+}
