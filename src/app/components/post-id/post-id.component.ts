@@ -36,27 +36,24 @@ export class PostIdComponent implements OnInit {
 
     this.commentsService.getCommentByPost(Number(this.postId)).then((data:Comment[]) => {
       this.comments = data;
-      console.log(this.comments);
     });
 
     this.postsService.getPostById(Number(this.postId)).then((data) => {
       this.post = data;
-      console.log(this.post);
     });
   }
 
-  public boton(nombre: string, mail: string, cuerpo: string) {
+  public addComment(name: string, email: string, body: string) {
     const comment = new Comment({
       postId: this.postId,
-      name: nombre,
-      email: mail,
-      body: cuerpo
+      name: name,
+      email: email,
+      body: body
     });
     this.commentsService.createComment(comment).then((data: Comment) => {
       data.id = this.allComments.length + 1;
       this.allComments.push(data);
       this.comments.push(data);
-      console.log(this.allComments);
     });
   }
 }

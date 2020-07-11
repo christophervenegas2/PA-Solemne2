@@ -40,6 +40,15 @@
         }
       }
 
+      .card-title {
+        font-weight: bold;
+        color: black;
+      }
+
+      .card-text {
+        font-style: italic;
+      }
+
       .card-body .bottom {
         display: flex;
         flex-direction: row;

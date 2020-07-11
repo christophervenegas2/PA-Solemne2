@@ -10,5 +10,21 @@
   .card {
     width: 30%;
     border: white 1px solid; 
+
+    .card-header {
+      font-weight: bold;
+      color:black;
+    }
+
+    .card-body {
+
+      .card-title {
+        color: floralwhite;
+      }
+
+      .card-text {
+        color: floralwhite;
+      }
+    }
   }
 }

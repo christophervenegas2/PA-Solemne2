@@ -13,6 +13,27 @@
     width: 60% !important;
     margin: 10px;
 
+    .card-body {
+
+      .userId {
+        font-size: 20px;
+
+        svg {
+          margin-bottom: 3px;
+          margin-right: 2px;
+        }
+      }
+
+      .card-title {
+        font-weight: bold;
+        color: black;
+      }
+
+      .card-text {
+        font-style: italic;
+      }
+    }
+
     .comments {
       border-top: solid 1px white;
 
@@ -22,7 +43,7 @@
       }
 
       .background {
-        background-color: white;
+        background-color:  #EEEE;
         margin: 20px;
         color: black;
 
@@ -39,13 +60,38 @@
             display: flex;
             flex-direction: row;
             justify-content: space-between;
+
+            .info {
+              font-weight: bold;
+            }
+
+            .email {
+              display: flex;
+              flex-direction: row;
+              color: #36363a;
+
+              .icon {
+                cursor: pointer;
+                width: 20px;
+                margin-bottom: 5px;
+              }
+            }
           }
+        }
+
+        .linedown {
+          font-style: italic;
         }
       }
 
       .button {
         text-align: center;
         margin-bottom: 20px;
+
+        button {
+          background-color: #36363a;
+          border-color: #36363a;
+        }
       }
     }
   }
@@ -53,4 +99,10 @@
 
 .modal-content {
   color: black;
+  background-color: #EEE;
+}
+
+.modal-footer button {
+  background-color: #36363a;
+  border-color: #36363a;
 }
