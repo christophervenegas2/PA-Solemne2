@@ -6,7 +6,7 @@ services:
       placement:
         constraints: [node.role==worker]
       labels:
-        traefik.http.routers.backend.rule: Host(`chorizord.rockstart.cl)
+        traefik.http.routers.backend.rule: Host(`angular.rockstart.cl)
         traefik.http.routers.backend.middlewares: https-redirect@file
         traefik.http.services.backend.loadbalancer.server.port: 80
         traefik.http.services.backend.priority: 1
