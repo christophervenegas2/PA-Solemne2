@@ -48,5 +48,17 @@ pipeline {
         }
       }
     }
+
+    stage('Generamos el release') {
+      steps {
+        echo 'Nos conectamos al GCP y desplegamos la aplicacion'
+        script {
+          docker.withRegistry('https://registry.gitlab.com'){
+            echo 'Publicando imagen de Angular'
+            frontendImage.push()
+          }
+        }
+      }
+    }
   }
 }
