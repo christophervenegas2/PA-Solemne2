@@ -1,3 +1,8 @@
+def remoted = [:]
+remoted.name = "swarm"
+remoted.host = "chorizord.rockstart.cl"
+remoted.allowAnyHosts = true
+
 pipeline {
   agent any
 
@@ -41,7 +46,7 @@ pipeline {
       steps {
         echo 'Subimos la imagen al repositorio'
         script {
-          docker.withRegistry('https://registry.gitlab.com'){
+          docker.withRegistry('https://registry.gitlab.com') {
             echo 'Publicando imagen de Angular'
             frontendImage.push()
           }
@@ -53,9 +58,16 @@ pipeline {
       steps {
         echo 'Nos conectamos al GCP y desplegamos la aplicacion'
         script {
-          docker.withRegistry('https://registry.gitlab.com'){
-            echo 'Publicando imagen de Angular'
-            frontendImage.push()
+          withCredentials([sshUserPrivateKey(credentialsId: 'Jenkins', keyFileVariable: 'identity', passphraseVariable: '', usernameVariable: 'userName')]) {
+            remoted.user = userName
+            remoted.identityFile = identity
+
+            stage('Deploy app'){
+              sshCommand remote: remoted, command: "cd /home/kerry/solemne2_g1 && git pull origin master", sudo: false
+              sshCommand remote: remoted, command: "chmod 755 /home/kerry/solemne2_g1/.docker/deploy.sh", sudo: true
+              sshCommand remote: remoted, command: "cd /home/kerry/solemne2_g1 && .docker/deploy.sh", sudo: false
+            }
+          }
           }
         }
       }
