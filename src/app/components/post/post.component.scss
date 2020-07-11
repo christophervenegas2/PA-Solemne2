@@ -23,7 +23,7 @@
     align-items: center;
 
     .card {
-      background: #6c757d !important;
+      background: #6c757d;
       border: solid 1px white;
       width: 60% !important;
       margin: 10px;
@@ -32,6 +32,23 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        margin-bottom: 10px;
+
+        svg {
+          font-size: 20px;
+          margin-bottom: 3px;
+        }
+      }
+
+      .card-body .bottom {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        
+        .divbutton button {
+          color: white;
+          background-color: black;
+        }
       }
     }
   }
