@@ -56,4 +56,13 @@ export class PostIdComponent implements OnInit {
       this.comments.push(data);
     });
   }
+
+
+  public deleteComment(commentId: number) {
+    this.commentsService.deleteComment(commentId)
+    .then(data => {
+      const commentIndex = this.comments.map((com: Comment) => com.id).indexOf(commentId);
+      this.comments.splice(commentIndex, 1);
+    });
+  }
 }

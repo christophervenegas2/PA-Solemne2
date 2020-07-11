@@ -1,6 +1,13 @@
 <div class="container">
   <div class="container__title">POSTS</div>
   <div class="container__input">
+    <!-- <label for="cars">Choose a User:</label>
+    <select name="cars" id="cars">
+      <option value="userId">1</option>
+      <option value="userId">2</option>
+      <option value="userId">3</option>
+      <option value="userId">4</option>
+    </select> -->
     <input [(ngModel)]="userId" placeholder="User ID (1-10)">
     <button (click)="postByUser()">Search</button>
   </div>
