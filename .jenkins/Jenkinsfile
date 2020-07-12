@@ -1,7 +1,7 @@
-// def remoted = [:]
-// remoted.name = "swarm"
-// remoted.host = "traefik.rockstart.cl"
-// remoted.allowAnyHosts = true
+def remoted = [:]
+remoted.name = "swarm"
+remoted.host = "traefik200.rockstart.cl"
+remoted.allowAnyHosts = true
 
 pipeline {
   agent any
@@ -54,21 +54,22 @@ pipeline {
       }
     }
 
-    // stage('Generamos el release') {
-    //   steps {
-    //     echo 'Nos conectamos a GCP y desplegamos la app'
-    //     script {
-    //       withCredentials([sshUserPrivateKey(credentialsId: 'Jenkins', keyFileVariable: 'identity', passphraseVariable: '', usernameVariable: 'userName')]) {
-    //         remoted.user = userName
-    //         remoted.identityFile = identity
-            // stage('Deploy app') {
-            //   sshCommand remote: remoted, command: "cd /home/kerry/solemne2_g1/ && git pull origin master", sudo: false
-            //   sshCommand remote: remoted, command: "chmod 755 /home/kerry/solemne2_g1/.docker/deploy.sh", sudo: false
-            //   sshCommand remote: remoted, command: "cd /home/kerry/solemne2_g1 && .docker/deploy.sh", sudo: false
-            // }
-    //       }
-    //     }
-    //   }
-    // }
+    stage('Generamos el release') {
+      steps {
+        echo 'Nos conectamos a GCP y desplegamos la app'
+        script {
+          withCredentials([sshUserPrivateKey(credentialsId: 'Jenkins', keyFileVariable: 'identity', passphraseVariable: '', usernameVariable: 'userName')]) {
+            remoted.user = userName
+            remoted.identityFile = identity
+
+            stage('Deploy app') {
+              sshCommand remote: remoted, command: "cd /home/kerry/solemne2_g1/ && git pull origin master", sudo: false
+              sshCommand remote: remoted, command: "chmod 755 /home/kerry/solemne2_g1/.docker/deploy.sh", sudo: false
+              sshCommand remote: remoted, command: "cd /home/kerry/solemne2_g1 && .docker/deploy.sh", sudo: false
+            }
+          }
+        }
+      }
+    }
   }
 }
