@@ -2,11 +2,11 @@
   "name": "solemne2",
   "version": "0.0.0",
   "scripts": {
-    "cibuild": "npm run test --watch=false && npm run build --prod --aot",
+    "cibuild": "npm run test && npm run build",
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
+    "build": "ng build --prod --aot",
+    "test": "ng test --watch=false --browsers=ChromeHeadless --code-coverage",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
