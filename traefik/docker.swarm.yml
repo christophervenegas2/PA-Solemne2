@@ -17,7 +17,7 @@ services:
       placement:
         constraints: [node.role==manager]
       labels:
-        traefik.http.routers.proxy.rule: Host(`chorizord.rockstart.cl`)
+        traefik.http.routers.proxy.rule: Host(`traefik.rockstart.cl`)
         traefik.http.routers.proxy.middlewares: https-redirect@file,general-auth@file
         traefik.http.services.proxy.loadbalancer.server.port: 8080
         traefik.docker.network: traefik-net

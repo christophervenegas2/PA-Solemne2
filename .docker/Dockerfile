@@ -13,9 +13,11 @@ RUN npm install -g @angular/cli
 
 RUN npm install 
 
-ENV CHROME_BIN=/usr/bin/google-chrome
+# ENV CHROME_BIN=/usr/bin/google-chrome
 
-RUN npm run cibuild
+# RUN npm run cibuild
+
+RUN npm run build
 
 #Nivel 2, El Nginx
 

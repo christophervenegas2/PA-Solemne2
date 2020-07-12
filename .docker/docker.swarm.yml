@@ -1,6 +1,6 @@
 version: '3.5'
 services:
-  angular:
+  chorizord:
     image: registry.gitlab.com/sebastianrh.sarh/solemne2_g1
     deploy:
       placement:
