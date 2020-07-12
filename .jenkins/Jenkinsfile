@@ -63,9 +63,9 @@ pipeline {
             remoted.identityFile = identity
 
             stage('Deploy app') {
-              sshCommand remote: remoted, command: "cd /home/kerry/solemne2_g1/ && git pull origin master", sudo: true
-              sshCommand remote: remoted, command: "chmod 755 /home/kerry/solemne2_g1/.docker/deploy.sh", sudo: true
-              sshCommand remote: remoted, command: "cd /home/kerry/solemne2_g1 && .docker/deploy.sh", sudo: true
+              sshCommand remote: remoted, command: "cd /home/kerry/solemne2_g1/ && git pull origin master", sudo: false
+              sshCommand remote: remoted, command: "chmod 755 /home/kerry/solemne2_g1/.docker/deploy.sh", sudo: false
+              sshCommand remote: remoted, command: "cd /home/kerry/solemne2_g1 && .docker/deploy.sh", sudo: false
             }
           }
         }
