@@ -13,9 +13,9 @@ RUN npm install -g @angular/cli
 
 RUN npm install 
 
-RUN yum install wget \
-&& wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm \
-&& yum install ./google-chrome-stable_current_*.rpm
+RUN apt-get install wget -y \
+&& wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm -y \
+&& apt-get install ./google-chrome-stable_current_*.rpm -y
 
 RUN npm run cibuild
 
