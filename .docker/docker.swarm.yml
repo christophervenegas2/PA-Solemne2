@@ -2,9 +2,11 @@ version: '3.5'
 services:
   chorizord:
     image: registry.gitlab.com/sebastianrh.sarh/solemne2_g1
+    ports:
+      - "80:80"
     deploy:
       placement:
-        constraints: [node.role==worker]
+        constraints: [node.role==manager]
       labels:
         traefik.http.routers.chorizord.rule: Host(`chorizord.rockstart.cl`)
         traefik.http.routers.chorizord.middlewares: https-redirect@file
