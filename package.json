@@ -2,7 +2,7 @@
   "name": "solemne2",
   "version": "0.0.0",
   "scripts": {
-    "cibuild": "ng test --no-watch && ng build --prod --aot",
+    "cibuild": "npm run test --watch=false && npm run build --prod --aot",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
