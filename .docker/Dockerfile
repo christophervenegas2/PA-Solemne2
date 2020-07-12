@@ -29,7 +29,7 @@ COPY --from=node /app/dist/solemne2 .
 
 EXPOSE 80
 
-COPY ./nginx-custom.conf /etc/nginx/conf.d/default.conf
+# COPY ./nginx-custom.conf /etc/nginx/conf.d/default.conf
 
 #Como correr Dockerfile? 
 #Dentro del "cd solemne2_g1" 
