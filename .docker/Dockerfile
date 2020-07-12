@@ -13,7 +13,9 @@ RUN npm install -g @angular/cli
 
 RUN npm install 
 
-RUN npm run cibuild
+RUN npm run test
+
+RUN npm run build
 
 #Nivel 2, El Nginx
 
