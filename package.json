@@ -2,7 +2,7 @@
   "name": "solemne2",
   "version": "0.0.0",
   "scripts": {
-    "cibuild": "ng test --code-coverage && ng build --prod --aot",
+    "cibuild": "ng test && ng build --prod --aot",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
