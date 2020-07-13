@@ -1,0 +1,114 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__title {
+    font-size: 100px;
+  }
+
+  .card {
+    background: #6c757d !important;
+    border: solid 1px white;
+    width: 60% !important;
+    margin: 10px;
+
+    .card-body {
+
+      .userId {
+        font-size: 20px;
+
+        svg {
+          margin-bottom: 3px;
+          margin-right: 2px;
+        }
+      }
+
+      .card-title {
+        font-weight: bold;
+        color: black;
+      }
+
+      .card-text {
+        font-style: italic;
+      }
+    }
+
+    .comments {
+      border-top: solid 1px white;
+
+      .title {
+        text-align: center;
+        margin-top: 20px;
+        text-decoration: underline;
+        color: black;
+        font-weight: bold;
+        font-family: serif;
+        font-size: 20px;
+      }
+
+      .background {
+        background-color:  #EEEE;
+        margin: 20px;
+        color: black;
+
+        .content {
+          padding: 10px;
+          border-radius: 10px 10px 10px 10px;
+          -moz-border-radius: 10px 10px 10px 10px;
+          -webkit-border-radius: 10px 10px 10px 10px;
+          border: 1px solid #000000;
+
+          .lineup {
+            border-bottom: solid 1px black;
+            margin: 0px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            .info {
+              font-weight: bold;
+            }
+
+            .email {
+              display: flex;
+              flex-direction: row;
+              color: #36363a;
+
+              .icon {
+                cursor: pointer;
+                width: 20px;
+                margin-bottom: 5px;
+                margin-left: 3px;
+              }
+            }
+          }
+        }
+
+        .linedown {
+          font-style: italic;
+        }
+      }
+
+      .button {
+        text-align: center;
+        margin-bottom: 20px;
+
+        button {
+          background-color: #36363a;
+          border-color: #36363a;
+        }
+      }
+    }
+  }
+}
+
+.modal-content {
+  color: black;
+  background-color: #EEE;
+}
+
+.modal-footer button {
+  background-color: #36363a;
+  border-color: #36363a;
+}
