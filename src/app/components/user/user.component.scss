@@ -7,22 +7,22 @@
     font-size: 100px;
   }
 
-  .card {
+  &__card {
     width: 30%;
     border: white 1px solid; 
 
-    .card-header {
+    &__header {
       font-weight: bold;
       color:black;
     }
 
-    .card-body {
+    &__body {
 
-      .card-title {
+      &__title {
         color: floralwhite;
       }
 
-      .card-text {
+      &__text {
         color: floralwhite;
       }
     }

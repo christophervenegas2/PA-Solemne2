@@ -7,15 +7,15 @@
     font-size: 100px;
   }
 
-  .card {
+  &__card {
     background: #6c757d !important;
     border: solid 1px white;
     width: 60% !important;
     margin: 10px;
 
-    .card-body {
+    &__body {
 
-      .userId {
+      &__userId {
         font-size: 20px;
 
         svg {
@@ -24,20 +24,20 @@
         }
       }
 
-      .card-title {
+      &__title {
         font-weight: bold;
         color: black;
       }
 
-      .card-text {
+      &__text {
         font-style: italic;
       }
     }
 
-    .comments {
+    &__comments {
       border-top: solid 1px white;
 
-      .title {
+      &__title {
         text-align: center;
         margin-top: 20px;
         text-decoration: underline;
@@ -47,35 +47,35 @@
         font-size: 20px;
       }
 
-      .background {
+      &__background {
         background-color:  #EEEE;
         margin: 20px;
         color: black;
 
-        .content {
+        &__content {
           padding: 10px;
           border-radius: 10px 10px 10px 10px;
           -moz-border-radius: 10px 10px 10px 10px;
           -webkit-border-radius: 10px 10px 10px 10px;
           border: 1px solid #000000;
 
-          .lineup {
+          &__lineup {
             border-bottom: solid 1px black;
             margin: 0px;
             display: flex;
             flex-direction: row;
             justify-content: space-between;
 
-            .info {
+            &__info {
               font-weight: bold;
             }
 
-            .email {
+            &__email {
               display: flex;
               flex-direction: row;
               color: #36363a;
 
-              .icon {
+              &__icon {
                 cursor: pointer;
                 width: 20px;
                 margin-bottom: 5px;
@@ -85,12 +85,12 @@
           }
         }
 
-        .linedown {
+        &__linedown {
           font-style: italic;
         }
       }
 
-      .button {
+      &__button {
         text-align: center;
         margin-bottom: 20px;
 
