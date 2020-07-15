@@ -1,8 +1,11 @@
 <div class="container">
   <div class="container__title">POSTS</div>
   <div class="container__input">
-    <input [(ngModel)]="userId" placeholder="User ID (1-10)">
-    <button (click)="postByUser()">Search</button>
+    <label>Filter by userId</label>
+    <select [(ngModel)]="userId" (change)="postByUser()">
+      <option [value]="-1">All</option>
+      <option *ngFor="let user of users" [value]="user.id">{{ user.id }}</option>
+    </select>
   </div>
   <div class="container__cards" *ngIf="!userId ? !userId : userId">
     <div class="container__cards__card" *ngFor="let post of posts">
